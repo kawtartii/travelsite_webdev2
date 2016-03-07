@@ -1,0 +1,187 @@
+body {
+	background-color:#beffbe;
+	background: url(background.jpg); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    overflow-y: scroll;
+
+
+
+	color: #001a00;
+	font-size: 16pt;
+
+    letter-spacing: 1px;
+
+}
+
+#menu_container{
+
+
+  position: fixed;
+  width: 100%;
+  height: 35px;
+  margin: 0px auto;
+  top: 5px;
+
+}
+
+
+#menu{
+
+  position: absolute;
+  width: 90%;
+  height: 30px;
+  top: 0px;
+  left: 50%;
+  margin-left: -450px;
+
+
+}
+
+
+
+
+#menu ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#menu ul li{
+	float:left;
+}
+
+#menu ul li a{
+	float:left;
+}
+
+#menu ul li a:link, #menu ul li a:visited{
+	display: block;
+    width: 195px;
+    font-weight: bold;
+	font-size: 18pt;
+    color: #EEEEEE;
+    background-color: #006600;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px black solid;
+}
+#menu ul li a:hover, #menu ul li a:active{
+	background-color: #009900;
+    color: white;
+}
+
+#content_container {
+	padding: 15px;
+  	margin: 50px auto;
+	width: 80%;
+/*	box-shadow: 40px 0 35px 100px #89ff89, -40px 0 35px 100px #89ff89;
+	background-color: rgba (137, 255, 137, 0.5); */
+	background-color: rgba(137, 255, 137, 0.7);
+	border-radius: 10px;
+
+
+}
+
+
+#content_container h2 {
+
+    text-align: center;
+}
+
+#content_container hr {
+  	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #001a00;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+#content_container input:active {
+	
+}
+
+#content_container a:link, #content_container a:visited {
+	color: #006600;
+}
+
+#content_container a:hover, #content_container a:active {
+	color: #009900;
+}
+
+
+.inline_image {
+	float:left;
+
+	width:40%;
+	height: auto;
+	margin-right: 25px;
+	margin-bottom: 25px;
+}
+
+.inline_content {
+
+    width: 530px;
+    display: inline-block;
+    margin-left: 10px;
+
+
+}
+
+#register_form input{
+	border-radius: 5px;
+}
+
+@media screen and (max-width: 1025px){
+	body {
+		/* background image does not work for narrow screens, also saves BW on mobile devices */
+		background: url('');
+		background-color:#beffbe;
+
+	}
+	#menu_container {
+		position: static;
+		width: 820px;
+	}
+
+	#menu{
+		position: static;
+		margin: 0 auto;
+		width: 90%;
+		height: 30px;
+		top: 0px;
+		left: 50%;
+	}
+
+	#content_container {
+		margin-top: 25px;
+	}
+}
+
+@media screen and (max-width: 820px){
+
+	#content_container {
+		margin-top: 55px;
+	}
+
+	#menu_container {
+		width: 410px;
+	}
+}
+
+@media screen and (max-width: 425px){
+
+	#menu_container {
+		width: 210px;
+		margin-bottom: 130px;
+	}
+
+
+}
+
+
