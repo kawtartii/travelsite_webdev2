@@ -4,6 +4,7 @@ var firstImage = 1;
 var ImageCount = 8;
 var Timer;
 var slides = new Array ();
+var maxHeight =0;
 
 $( document ).ready(function() {
 
@@ -33,12 +34,13 @@ function initSlideShow (containerID){
 $( "#nextSlide" ).click (nextSlide);
 $( "#previousSlide" ).click (previousSlide);
 	var i = 0;
-	var maxHeight =0;
 
 	$('img', $('#'+ containerID)).each(function () {
 		//		console.log($(this).height()); //log every element found to console output
 		slides[i] = $(this);
 		i++;
+		$(this).on('load', handleImgLoad);
+
 		if ($(this).height() > maxHeight){
 			maxHeight =$(this).height();
 		}
@@ -52,7 +54,6 @@ function updateMaxHeight (containerID){
 	var maxHeight =0;
 	$('img', $('#'+ containerID)).each(function () {
 		//		console.log($(this).height()); //log every element found to console output
-
 		if ($(this).height() > maxHeight){
 			maxHeight =$(this).height();
 		}
@@ -61,6 +62,13 @@ function updateMaxHeight (containerID){
 
   $( "#" + containerID).css ("height", maxHeight + "px");
 
+
+}
+
+
+function handleImgLoad (){
+	console.log ("handleImgLoad: " + $(this).attr("id") + ":" +  $(this).height());
+	updateMaxHeight ("slideShow");
 
 }
 
