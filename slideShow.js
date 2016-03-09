@@ -1,31 +1,26 @@
-var doRandom = false;
+//some global variables
+var doRandom = false; //change to true to make the order random
 var duration = 5000; //time image is shown in milliseconds
 var firstImage = 1;
-var ImageCount = 8;
+var imageCount;
 var Timer;
 var slides = new Array ();
 var maxHeight =0;
 
-$( document ).ready(function() {
+$( document ).ready(function() {//lets wait for the page to render before we start anything
 
-	//some testing
-	for (i = firstImage; i <=ImageCount; i++) {
-//		$( "#slideShow" ). append ('<img src="images/slide'+i+'.jpg" alt="" id="slide'+i+'" class="slideShow_image" />');//fill the div with all the images
-	}
-//var slideshow = $( "#slideShow" );
-
+/*
+some debug code
 $('img', $('#slideShow')).each(function () {
-   // console.log($(this).height()); //log every element found to console output
+    console.log($(this).height()); //log every element found to console output
+});
+*/
+	initSlideShow ("slideShow"); //start the slideshow
 });
 
-
-//console.log();
-
-
-initSlideShow ("slideShow");
-
-
-
+//this handles the resize event, and is what makes the slide show responsive
+$( window ).resize(function() {
+	updateMaxHeight ("slideShow");
 });
 
 
@@ -34,35 +29,30 @@ function initSlideShow (containerID){
 $( "#nextSlide" ).click (nextSlide);
 $( "#previousSlide" ).click (previousSlide);
 	var i = 0;
-
 	$('img', $('#'+ containerID)).each(function () {
-		//		console.log($(this).height()); //log every element found to console output
 		slides[i] = $(this);
 		i++;
-		$(this).on('load', handleImgLoad);
-
+		$(this).on('load', handleImgLoad);//register an onload handler, just incase the image is not done loading
+/*
 		if ($(this).height() > maxHeight){
 			maxHeight =$(this).height();
 		}
-
+*/
 	});
+	imageCount = slides.length - 1;
 	updateMaxHeight (containerID);
-	updateSlideShow (0, slides.length - 1);
+	updateSlideShow (0, imageCount);
 }
 
 function updateMaxHeight (containerID){
-	var maxHeight =0;
+//this function looks at the height of each image in the container and determines the largest
 	$('img', $('#'+ containerID)).each(function () {
 		//		console.log($(this).height()); //log every element found to console output
 		if ($(this).height() > maxHeight){
 			maxHeight =$(this).height();
 		}
-
 	});
-
-  $( "#" + containerID).css ("height", maxHeight + "px");
-
-
+  $( "#" + containerID).css ("height", maxHeight + "px"); //set the container to the size of the max
 }
 
 
@@ -72,41 +62,30 @@ function handleImgLoad (){
 
 }
 
-$( window ).resize(function() {
-  //$( "#log" ).append( "<div>Handler for .resize() called.</div>" );
-updateMaxHeight ("slideShow");
-});
+
 
 
 
 function updateSlideShow (slideNumber, previous){
-	console.log ("parameters: " +  slideNumber + ":" + previous);
- // $( "slide"+ slideNumber ). css ('<img src="images/slide'+slideNumber+'.jpg" alt="" class="slideShow_image" />');
- // $( "#slide"+ previous ).css ("opacity", 0);
-//  $( "#slide"+ slideNumber ).css ("opacity", 1);
-//$( "#slideShow" ).css ("height",  $( "#slide"+ slideNumber ).height() + "px");
+//	console.log ("parameters: " +  slideNumber + ":" + previous);
+
+slides [slideNumber].css ("opacity", 1); //fade in
+slides [previous].css ("opacity", 0); //fade out
+
+/* some debug output
 console.log (slides [slideNumber]);
-slides [slideNumber].css ("opacity", 1);
-slides [previous].css ("opacity", 0);
-
-
-
 console.log ("hieght: " + $( "#slide"+ slideNumber ).height() );
-
-
-
-    console.log ("updateSlideShow: " +slideNumber + ":" + previous );
+console.log ("updateSlideShow: " +slideNumber + ":" + previous );
+*/
 	previous = slideNumber;
   if (doRandom){
-	slideNumber = Math.floor((Math.random() * ImageCount) + firstImage);
+	slideNumber = Math.floor((Math.random() * imageCount) + firstImage);
   }else{
-
-    if (slideNumber == slides.length - 1){
+    if (slideNumber == imageCount){
       slideNumber = firstImage;
     }else{
       slideNumber ++;
     }
-
   }
     Timer = setTimeout (updateSlideShow, duration, slideNumber, previous);
 }
