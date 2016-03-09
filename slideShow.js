@@ -6,7 +6,9 @@ var Timer;
 var slides = new Array ();
 
 $( document ).ready(function() {
-	for (i = firstImage; i <=ImageCount; i++) { 
+
+	//some testing
+	for (i = firstImage; i <=ImageCount; i++) {
 //		$( "#slideShow" ). append ('<img src="images/slide'+i+'.jpg" alt="" id="slide'+i+'" class="slideShow_image" />');//fill the div with all the images
 	}
 //var slideshow = $( "#slideShow" );
@@ -27,7 +29,9 @@ initSlideShow ("slideShow");
 
 
 function initSlideShow (containerID){
-
+//register some click handlers
+$( "#nextSlide" ).click (nextSlide);
+$( "#previousSlide" ).click (previousSlide);
 	var i = 0;
 	var maxHeight =0;
 
@@ -36,7 +40,7 @@ function initSlideShow (containerID){
 		slides[i] = $(this);
 		i++;
 		if ($(this).height() > maxHeight){
-			maxHeight =$(this).height(); 
+			maxHeight =$(this).height();
 		}
 
 	});
@@ -50,7 +54,7 @@ function updateMaxHeight (containerID){
 		//		console.log($(this).height()); //log every element found to console output
 
 		if ($(this).height() > maxHeight){
-			maxHeight =$(this).height(); 
+			maxHeight =$(this).height();
 		}
 
 	});
@@ -86,7 +90,7 @@ console.log ("hieght: " + $( "#slide"+ slideNumber ).height() );
     console.log ("updateSlideShow: " +slideNumber + ":" + previous );
 	previous = slideNumber;
   if (doRandom){
-	slideNumber = Math.floor((Math.random() * ImageCount) + firstImage);  
+	slideNumber = Math.floor((Math.random() * ImageCount) + firstImage);
   }else{
 
     if (slideNumber == slides.length - 1){
@@ -101,7 +105,9 @@ console.log ("hieght: " + $( "#slide"+ slideNumber ).height() );
 
 
 function nextSlide (){
-
+	alert ("you clicked next slide");
 }
 
-
+function previousSlide (){
+	alert ("you clicked previous slide");
+}

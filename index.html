@@ -9,13 +9,12 @@
   <meta name="author" content="David Schadlich, Jacob Hilton, Katie Lugus">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
-  <script src='slideShow.js'></script>
+
 
 </head>
 
 <body>
-	
+
 	<div id="menu_container">
 		<span id="menu">
 			<ul>
@@ -29,10 +28,10 @@
 
 	<div id="content_container">
 		<h1>Vermont</h1>
-                
+
                 <hr style="border-color: white;">
 				<div id="slideShow">
-
+<!-- populate the slide show here -->
 					<img src="images/slide1.jpg" alt="" id="slide1" class="slideShow_image"/>
 					<img src="images/slide2.jpg" alt="" id="slide2" class="slideShow_image"/>
 					<img src="images/slide3.jpg" alt="" id="slide3" class="slideShow_image"/>
@@ -43,35 +42,33 @@
 					<img src="images/slide8.jpg" alt="" id="slide8" class="slideShow_image"/>
 
 				</div>
-<!--                
-                <ul id="slideShow">
 
-                </ul>
--->               
-                
+
                 <p>
-                    Vermont is a state in the northeastern U.S. known for its 
-                    natural landscape, which is 75% forest. It's also known for 
-                    being home to over 100 19th-century covered bridges, and as 
-                    a major producer of maple syrup. Thousands of acres of alpine 
-                    terrain make it a popular New England winter destination for 
+                    Vermont is a state in the northeastern U.S. known for its
+                    natural landscape, which is 75% forest. It's also known for
+                    being home to over 100 19th-century covered bridges, and as
+                    a major producer of maple syrup. Thousands of acres of alpine
+                    terrain make it a popular New England winter destination for
                     skiers and snowboarders.
                 </p>
-                
+
                 <p>
                     Vermont consistently ranks as one of the top places to live,
-                    work, and vacation, and Vermont.com is your guide to everything 
-                    in the state of Vermont. Visitors can find a variety of places 
-                    to stay in Vermont, from upscale Burlington hotels, to 
-                    quaint bed and breakfasts and Vermont inns, to budget friendly 
-                    motels. Vermont’s natural beauty, range of venues, and short 
+                    work, and vacation, and Vermont.com is your guide to everything
+                    in the state of Vermont. Visitors can find a variety of places
+                    to stay in Vermont, from upscale Burlington hotels, to
+                    quaint bed and breakfasts and Vermont inns, to budget friendly
+                    motels. Vermont’s natural beauty, range of venues, and short
                     distance to Boston, New York, and Montreal, make Vermont weddings ideal.
                 </p>
-                
+
                 <hr style="border-color: white;">
 	</div>
 
 
 </body>
-
+<!-- Load the js at the bottom to help prevent a race condition -->
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script src='slideShow.js'></script>
 </html>
