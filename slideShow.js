@@ -98,7 +98,7 @@ console.log ("hieght: " + $( "#slide"+ slideNumber ).height() );
     console.log ("updateSlideShow: " +slideNumber + ":" + previous );
 	previous = slideNumber;
   if (doRandom){
-	slideNumber = Math.floor((Math.random() * (slides.length - 1))) + firstImage);
+	slideNumber = Math.floor((Math.random() * ImageCount) + firstImage);
   }else{
 
     if (slideNumber == slides.length - 1){

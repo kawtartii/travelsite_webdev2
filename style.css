@@ -1,68 +1,53 @@
 body {
-	background-color:#beffbe;
-	background: url(images/background.jpg); 
-    background-size: 100%;
+    background-color:#beffbe;
+    background: url(images/background.jpg); 
+    background-size: 100%;        
     background-repeat: no-repeat;
-	background-attachment: fixed;
+    background-attachment: fixed;
     overflow-y: scroll;
-
-
-
-	color: #001a00;
-	font-size: 16pt;
-
+    color: #001a00;
+    font-size: 16pt;
     letter-spacing: 1px;
-
+    font-family:sans-serif;
 }
 
 #menu_container{
-
-
   position: fixed;
   width: 100%;
   height: 35px;
   margin: 0px auto;
   top: 5px;
-
 }
 
-
 #menu{
-
   position: absolute;
   width: 90%;
   height: 30px;
   top: 0px;
   left: 50%;
   margin-left: -450px;
-
-
-
 }
 
-
-
-
-#menu ul{
-	list-style-type: none;
+#menu ul{   
+    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
 #menu ul li{
-	float:left;
+    float:left;
 }
 
 #menu ul li a{
-	float:left;
+    float:left;
 }
 
 #menu ul li a:link, #menu ul li a:visited{
-	display: block;
+    display: block;
     width: 195px;
     font-weight: bold;
-	font-size: 18pt;
+    font-size: 18pt;
     color: #EEEEEE;
     background-color: #006600;
     text-align: center;
@@ -71,31 +56,30 @@ body {
     text-transform: uppercase;
     border: 1px black solid;
 }
+
 #menu ul li a:hover, #menu ul li a:active{
-	background-color: #009900;
+    background-color: #009900;
     color: white;
 }
 
 #content_container {
-	padding: 15px;
-  	margin: 50px auto;
-	width: 80%;
-/*	box-shadow: 40px 0 35px 100px #89ff89, -40px 0 35px 100px #89ff89;
-	background-color: rgba (137, 255, 137, 0.5); */
-	background-color: rgba(137, 255, 137, 0.7);
-	border-radius: 10px;
-
-
+    padding: 15px;
+    margin: 50px auto;
+    width: 80%;
+/* 
+    box-shadow: 40px 0 35px 100px #89ff89, -40px 0 35px 100px #89ff89;
+    background-color: rgba (137, 255, 137, 0.5); 
+*/
+    background-color: rgba(137, 255, 137, 0.7);
+    border-radius: 10px;
 }
 
-
 #content_container h2 {
-
     text-align: center;
 }
 
 #content_container hr {
-  	display: block;
+    display: block;
     height: 1px;
     border: 0;
     border-top: 1px solid #001a00;
@@ -108,55 +92,49 @@ body {
 }
 
 #content_container a:link, #content_container a:visited {
-	color: #006600;
+    color: #006600;
 }
 
 #content_container a:hover, #content_container a:active {
-	color: #009900;
+    color: #009900;
 }
 
 #slideShow {
-	width:80%;
-	height: 100%;
- 	position:relative;
-  	margin:0 auto;
-
+    width:60%;
+    height: 100%;   
+    position:relative;
+    margin:0 auto;
 }
+
 .slideShow_image {
-
-	width:100%;
-	height: auto;
-	margin-right: auto;
+    width:100%;
+    height: auto;
+    margin-right: auto;
     margin-left: auto;
-
-	margin-bottom: 25px;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  position:absolute;
-  left:0;
-opacity: 0;
-z-index: 1;
+    margin-bottom: 0px;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    position:absolute;
+    left:0;
+    opacity: 0;
+    z-index: 1;
 }
 
 
 .inline_image {
-	float:left;
-
-	width:40%;
-	height: auto;
-	margin-right: 25px;
-	margin-bottom: 25px;
+    float:left;
+    width:40%;
+    height: auto;
+    margin-right: 25px;
+    margin-bottom: 25px;
 }
 
 .inline_content {
-
     width: 530px;
     display: inline-block;
     margin-left: 10px;
-
-
 }
 
 #register_form input{
@@ -165,7 +143,10 @@ z-index: 1;
 
 @media screen and (max-width: 1025px){
 	body {
-		/* background image does not work for narrow screens, also saves BW on mobile devices */
+		/* 
+                background image does not work for narrow screens, 
+                also saves BW on mobile devices 
+                */
 		background: url('');
 		background-color:#beffbe;
 
@@ -198,6 +179,12 @@ z-index: 1;
 	#menu_container {
 		width: 410px;
 	}
+        #slideShow {
+                width: 80%;
+                height: 100%;   
+                position:relative;
+                margin:0 auto;
+        }
 }
 
 @media screen and (max-width: 425px){
@@ -206,8 +193,12 @@ z-index: 1;
 		width: 210px;
 		margin-bottom: 130px;
 	}
-
-
+        #slideShow {
+                width: 100%;
+                height: 100%;   
+                position:relative;
+                margin:0 auto;
+        }
 }
 
 
